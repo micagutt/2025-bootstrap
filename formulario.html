@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <main class="main-padding">
+        <section>
+            <h1>Página Admin</h1>
+            <h2>Formulario</h2>
+            <form action="">
+                <fieldset class="formulario-artista">
+                    <legend>Información general de artista</legend>
+                    <div>
+                        <label for="nombreMuestra">Nombre</label>
+                        <input aria-describedby="falta-nombre" autocomplete="off" class="necesario" id="nombreMuestra"
+                            type="text" required />
+                        <p class="alerta" id="falta-nombre" role="alert"> Debe ingresar un nombre válido</p>
+                    </div>
+
+                    <div>
+                        <label for="nombreComp">Nombre completo</label>
+                        <input aria-describedby="falta-nombre-completo" autocomplete="off" class="necesario"
+                            id="nombreComp" type="text" required />
+                        <p class="alerta" id="falta-nombre-completo" role="alert"> Debe ingresar un nombre válido</p>
+                    </div>
+                    <div>
+                        <label for="edad">Edad</label>
+                        <input aria-describedby="falta-edad" autocomplete="off" class="necesario" id="edad"
+                            type="number" required />
+                        <p class="alerta" id="falta-edad" role="alert"> Debe ingresar una edad válida</p>
+                    </div>
+                    <div>
+                        <label for="genero">Genero</label>
+
+                        <select aria-describedby="falta-genero" class="necesario" name="" id="genero" required>
+                            <option hidden value=null>Seleccionar Género</option>
+                            <option value="hombre">Hombre</option>
+                            <option value="mujer">Mujer</option>
+                            <option value="no binario">No binario</option>
+                        </select>
+                        <p class="alerta" id="falta-genero" role="alert"> Debe ingresar un género</p>
+                    </div>
+
+                    <div>
+                        <label for="imagen">Ingrese una foto de perfil para el artista</label>
+                        <input aria-describedby="falta-foto" class="necesario" id="imagen" type="file"
+                            class="input-imagen" required />
+                        <p class="alerta" id="falta-foto" role="alert"> Debe ingresar una foto de perfil</p>
+                    </div>
+                    <div>
+                        <label for="biografia">Biografia</label>
+                        <textarea aria-describedby="falta-bio" autocomplete="off" class="necesario" id="biografia"
+                            required></textarea>
+                        <p class="alerta" id="falta-bio" role="alert"> Ingrese una biografía</p>
+                    </div>
+
+                    <ul>
+                        <li>
+                            <input class="necesario" type="radio" name="arte" id="fotografo" value="Fotógrafo" />
+                            <label for="fotografo">Fotógrafo</label>
+                        </li>
+                        <li>
+                            <input class="necesario" type="radio" name="arte" id="pintor" value="Pintor" />
+                            <label for="pintor">Pintor</label>
+                        </li>
+                        <li>
+                            <input class="necesario" type="radio" name="arte" id="musico" value="Músico" />
+                            <label for="musico">Músico</label>
+                        </li>
+                        <li>
+                            <input class="necesario" type="radio" name="arte" id="escultor" value="Escultor" />
+                            <label for="escultor">Escultor</label>
+                        </li>
+                        <li>
+                            <input class="necesario" type="radio" name="arte" id="escritor" value="Escritor" />
+                            <label for="escritor">Escritor</label>
+                        </li>
+                        <li>
+                            <input class="necesario" type="radio" name="arte" id="actor" value="Actor" />
+                            <label for="actor">Actor</label>
+                        </li>
+                        <li>
+                            <input class="necesario" type="radio" name="arte" id="director" value="Director" />
+                            <label for="director">Director</label>
+                        </li>
+                        <p class="alerta" role="alert"> Seleccione un tipo de artista</p>
+                    </ul>
+                </fieldset>
+                <fieldset class="formulario-artista" id="especifico">
+                    <legend>Información específica de artista</legend>
+                    <div>
+                        <label for="camara" name="Fotógrafo">Ingrese la cámara del fotógrafo</label>
+                        <input aria-describedby="falta-camara" autocomplete="off" type="text" id="camara"
+                            name="Fotógrafo" placeholder="Ej. Canon" />
+                        <p class="alerta" name="Fotógrafo" id="falta-camara" role="alert"> Ingrese una cámara</p>
+                    </div>
+
+                    <div>
+                        <label for="pinturas" name="Pintor">Ingrese qué pinturas usa el pintor</label>
+                        <input aria-describedby="falta-pinturas" autocomplete="off" type="text" id="pinturas"
+                            name="Pintor" placeholder="Ej. Acuarela" />
+                        <p class="alerta" name="Pintor" id="falta-pinturas" role="alert"> Ingrese un tipo de pintura</p>
+                    </div>
+                    <div>
+                        <label for="pinta" name="Pintor">Ingrese qué suele pinat el pintor</label>
+                        <input aria-describedby="falta-superficie" autocomplete="off" type="text" id="pinta"
+                            placeholder="Ej. murales" name="Pintor" />
+                        <p class="alerta" name="Pintor" id="falta-superficie" role="alert"> Ingrese una superficie</p>
+                    </div>
+
+                    <div>
+                        <label for="instrumentos" name="Músico">Ingrese los instrumentos que el músico toca</label>
+                        <input aria-describedby="falta-instrumento" autocomplete="off" type="text" id="instrumentos"
+                            name="Músico" placeholder="Ej. Guitarra" />
+                        <p class="alerta" name="Músico" id="falta-instrumento" role="alert"> Ingrese un instrumento</p>
+                    </div>
+
+                    <div>
+                        <label for="materiales" name="Escultor">Ingrese los materiales con los que el escultor
+                            trabaja</label>
+                        <input aria-describedby="falta-material" autocomplete="off" type="text" placeholder="Ej. marmol"
+                            id="materiales" name="Escultor" />
+                        <p class="alerta" name="Escultor" id="falta-material" role="alert"> Ingrese un material</p>
+                    </div>
+
+                    <div>
+                        <label for="escribe" name="Escritor">Ingrese que escribe el escritor</label>
+                        <input aria-describedby="falta-tipo-texto" autocomplete="off" type="text"
+                            placeholder="ej. novelas" id="escribe" name="Escritor" />
+                        <p class="alerta" name="Escritor" id="falta-tipo-texto" role="alert"> Ingrese un tipo de texto
+                        </p>
+                    </div>
+
+                    <div>
+                        <label for="generoEsc" name="Escritor">Ingrese el género que escribe el escritor</label>
+                        <input aria-describedby="falta-genero-esc" autocomplete="off" type="text"
+                            placeholder="ej. misterio" id="generoEsc" name="Escritor" />
+                        <p class="alerta" name="Escritor" id="falta-genero-esc" role="alert"> Ingrese un género de
+                            escritura</p>
+                    </div>
+
+                    <div>
+                        <label for="obrasAct" name="Actor">Ingrese en qué obras actuó el actor</label>
+                        <input aria-describedby="falta-obra-act" autocomplete="off" type="text" id="obrasAct"
+                            placeholder="Ej. Titanic" name="Actor" />
+                        <p class="alerta" name="Actor" id="falta-obra-act" role="alert"> Ingrese al menos una obra</p>
+                    </div>
+                    <div>
+                        <label for="personajes" name="Actor">Ingrese de qué personajes hizo respectivamente</label>
+                        <input aria-describedby="falta-personaje" autocomplete="off" type="text" placeholder="Ej. Rose"
+                            id="personajes" name="Actor" />
+                        <p class="alerta" name="Actor" id="falta-personaje" role="alert"> Ingrese un personaje</p>
+                    </div>
+                    <div>
+                        <label for="generoAct" name="Actor">Ingrese en qué generos suele actuar el actor</label>
+                        <input aria-describedby="falta-genero-act" autocomplete="off" type="text"
+                            placeholder="Ej. romance" id="generoAct" name="Actor" />
+                        <p class="alerta" name="Actor" id="falta-genero-act" role="alert"> Ingrese un género actoral</p>
+                    </div>
+                    <div>
+                        <label for="obrasDir" name="Director">Ingrese qué obras dirigió el escritor</label>
+                        <input aria-describedby="falta-obra-dir" autocomplete="off" type="text" id="obrasDir"
+                            placeholder="Ej. Duro de Matar" name="Director" />
+                        <p class="alerta" name="Director" id="falta-obra-dir" role="alert"> Ingrese al menos una obra
+                        </p>
+                    </div>
+                    <div>
+                        <label for="generoDir" name="Director">Ingrese qué generos suele dirigir el escitor</label>
+                        <input aria-describedby="falta-genero-dir" autocomplete="off" type="text"
+                            placeholder="ej. acción" id="generoDir" name="Director" />
+                        <p class="alerta" name="Director" id="falta-genero-dir" role="alert"> Ingrese al menos un género
+                        </p>
+                    </div>
+                </fieldset>
+                <input class="btn-enviar" id="enviar" type="button" value="Enviar" />
+            </form>
+        </section>
+        <section>
+            <h2>Artistas ingresados (recargue la página para actualizar lista)</h2>
+            <ul class="tarjetas" id="lista"></ul>
+        </section>
+    </main>
+    <footer></footer>
+</body>
+<script src="assets/js/scripts.js" defer></script>
+<script src="https://kit.fontawesome.com/c109fc5a43.js" crossorigin="anonymous"></script>
+
+</html>
