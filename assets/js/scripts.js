@@ -338,28 +338,41 @@ let clases = [Fotógrafo, Pintor, Músico, Escultor, Escritor, Actor, Director]
 //Funciones de index
 if (document.title === "Foro de Artistas") {
     tarjetas = document.getElementById("tarjetas")
-    contenedores = tarjetas.getElementsByTagName("li")
-    botones = tarjetas.getElementsByTagName("button")
+    contenedores = tarjetas.getElementsByTagName("li");
+    botones = tarjetas.getElementsByTagName("button");
 
     let criterio
     let valor
 
     //Función para desplegar las tarjetas de los artistas
-    function desglozar() {
-        let button = event.currentTarget //Defino la tarjeta que toqué
-        for (i = 0; i < botones.length; i++) {
-            if (button === botones[i]) { //Me fijo a que li pertenece dicho button
-                valor = i
+    function desglozar(event) {
+        let button = event.currentTarget;
+        let valor;
+        for (let i = 0; i < botones.length; i++) {
+            if (button === botones[i]) {
+                valor = i;
             }
         }
-        if (contenedores[valor].ariaExpanded == "false") { //Si la tarjeta no está expandida
-            contenedores[valor].getElementsByClassName("fa-solid fa-angle-down")[0].style.transform = "rotate(180deg)" //Volteo la flechita
-            contenedores[valor].getElementsByTagName("p")[0].style.display = "block" //Muestro la descripción del artista
-            contenedores[valor].ariaExpanded = "true" //Lo defino como expandido
-        } else { //Si la tarjeta está expandida
-            contenedores[valor].getElementsByClassName("fa-solid fa-angle-down")[0].style.transform = "rotate(0deg)" //Voleto la flechita a como estaba
-            contenedores[valor].getElementsByTagName("p")[0].style.display = "none" //Oculto la descripción del artista
-            contenedores[valor].ariaExpanded = "false" //Lo defino como no expandido
+        let icono = contenedores[valor].getElementsByClassName("fa-solid fa-angle-down")[0];
+        let parrafo = contenedores[valor].getElementsByTagName("p")[0];
+
+        // Cierra todas las demás tarjetas
+        for (let i = 0; i < contenedores.length; i++) {
+            let otroIcono = contenedores[i].getElementsByClassName("fa-solid fa-angle-down")[0];
+            let otroParrafo = contenedores[i].getElementsByTagName("p")[0];
+            if (i !== valor) {
+                otroIcono.style.transform = "rotate(0deg)";
+                otroParrafo.classList.remove("show");
+            }
+        }
+
+        // Alterna la seleccionada
+        if (!parrafo.classList.contains("show")) {
+            icono.style.transform = "rotate(180deg)";
+            parrafo.classList.add("show");
+        } else {
+            icono.style.transform = "rotate(0deg)";
+            parrafo.classList.remove("show");
         }
     }
 
@@ -459,6 +472,7 @@ if (document.title === "Foro de Artistas") {
 
             if (campo.length !== 0) {
 
+                // Crear elementos
                 li = document.createElement("li")
                 button = document.createElement("button")
                 figure = document.createElement("figure")
@@ -470,12 +484,31 @@ if (document.title === "Foro de Artistas") {
                 p = document.createElement("p")
                 a = document.createElement("a")
 
+                li.className = 'col-md-4 mb-4 d-flex';
+
+                let card = document.createElement('div');
+                card.className = 'card h-100 bg-transparent border-light text-light shadow-lg w-100'; // ampliada y con sombra
+
+                // Imagen horizontal arriba de la card
+                img.className = 'card-img-top img-fluid';
+                img.style = "height: 180px; object-fit: cover; background: #fff;";
+                img.src = JSON.parse(campo[i]).img;
+                img.alt = JSON.parse(campo[i]).nombreMuestra;
+
+                // El resto del contenido
+                button.className = 'btn w-100 text-start d-flex align-items-center bg-transparent border-0 p-0';
+                figure.className = 'd-flex align-items-center w-100 m-0';
+                figcaption.className = 'd-flex flex-column text-light';
+                h3.className = 'mb-1 text-light fs-5';
+                h4.className = 'mb-0 text-light fs-6';
+                icon.className = "fa-solid fa-angle-down ms-auto";
+                icon.setAttribute("aria-hidden", "true");
+                p.className = 'card-text mt-3 text-light collapse';
+                a.className = 'btn btn-info btn-sm mt-3'; // botón debajo del texto ampliado
+
 
                 li.setAttribute("aria-expanded", "false")
 
-                img.src = JSON.parse(campo[i]).img
-
-                img.alt = JSON.parse(campo[i]).nombreMuestra
                 h3.innerText = JSON.parse(campo[i]).nombreMuestra
                 h4.innerText = JSON.parse(campo[i]).rubro
                 icon.className = "fa-solid fa-angle-down"
@@ -495,15 +528,17 @@ if (document.title === "Foro de Artistas") {
 
                 //Hago aparecer los elementos
                 tarjetas.appendChild(li)
-                li.appendChild(button)
-                li.appendChild(p)
-                p.appendChild(a)
+                li.appendChild(card);
+                card.appendChild(img); // Imagen horizontal arriba
+                card.appendChild(button);
                 button.appendChild(figure)
-                button.appendChild(icon)
-                figure.appendChild(img)
                 figure.appendChild(figcaption)
                 figcaption.appendChild(h3)
                 figcaption.appendChild(h4)
+                button.appendChild(icon)
+                card.appendChild(p)
+                card.appendChild(a)
+
             }
         }
     }
@@ -516,7 +551,7 @@ if (document.title === "Foro de Artistas") {
 
 //Funciones de formulario
 if (document.title === "Admin") {
-    
+
     let clave
 
     //Una contraseña que, en la práctica, solo conocerá el/los admin/s de la página
@@ -549,44 +584,57 @@ if (document.title === "Admin") {
 
                 for (j = 0; j < JSON.parse(campo[i]).length; j++) {
 
-                    li = document.createElement("li")
-                    button = document.createElement("button")
-                    figure = document.createElement("figure")
-                    img = document.createElement("img")
-                    figcaption = document.createElement("figcaption")
-                    h4 = document.createElement("h4")
-                    h5 = document.createElement("h5")
-                    p = document.createElement("p")
-                    icon = document.createElement("i")
+                     li = document.createElement("li")
+                li.className = "col-md-4 mb-4 d-flex"; // 3 por fila, con separación
 
+                card = document.createElement("div")
+                card.className = "card h-100 bg-transparent border-light text-light shadow-lg w-100"
 
-                    img.src = JSON.parse(JSON.parse(campo[i])[j]).img
-                    img.alt = JSON.parse(JSON.parse(campo[i])[j]).nombreMuestra
-                    h4.innerText = JSON.parse(JSON.parse(campo[i])[j]).nombreMuestra
-                    h5.innerText = JSON.parse(JSON.parse(campo[i])[j]).rubro
-                    button.innerText = "Eliminar"
-                    button.id = j
-                    button.rubro = JSON.parse(JSON.parse(campo[i])[j]).rubro
-                    posibles.push(JSON.parse(JSON.parse(campo[i])[j]))
+                figure = document.createElement("figure")
+                figure.className = "d-flex align-items-center w-100 m-0"
 
-                    //añado un botón que pueda eliminar artistas de la página
-                    button.addEventListener("click", borrar)
+                img = document.createElement("img")
+                img.className = "img-fluid rounded me-3"
+                img.style = "width: 80px; height: 80px; object-fit: cover; background: #fff;"
 
+                figcaption = document.createElement("figcaption")
+                figcaption.className = "d-flex flex-column text-light"
 
-                    tarjetas.appendChild(li)
-                    li.appendChild(button)
-                    button.appendChild(icon)
-                    li.appendChild(figure)
-                    figure.appendChild(img)
-                    figure.appendChild(figcaption)
-                    figcaption.appendChild(h4)
-                    figcaption.appendChild(h5)
-                }
+                h4 = document.createElement("h4")
+                h4.className = "mb-1 text-light fs-5"
+
+                h5 = document.createElement("h5")
+                h5.className = "mb-0 text-light fs-6"
+
+                button = document.createElement("button")
+                button.className = "btn btn-danger btn-sm mt-3 w-100"
+                button.innerText = "Eliminar"
+                button.id = j
+                button.rubro = JSON.parse(JSON.parse(campo[i])[j]).rubro
+
+                img.src = JSON.parse(JSON.parse(campo[i])[j]).img
+                img.alt = JSON.parse(JSON.parse(campo[i])[j]).nombreMuestra
+                h4.innerText = JSON.parse(JSON.parse(campo[i])[j]).nombreMuestra
+                h5.innerText = JSON.parse(JSON.parse(campo[i])[j]).rubro
+
+                posibles.push(JSON.parse(JSON.parse(campo[i])[j]))
+
+                //añado un botón que pueda eliminar artistas de la página
+                button.addEventListener("click", borrar)
+
+                //armo la estructura
+                tarjetas.appendChild(li)
+                li.appendChild(card)
+                card.appendChild(figure)
+                figure.appendChild(img)
+                figure.appendChild(figcaption)
+                figcaption.appendChild(h4)
+                figcaption.appendChild(h5)
+                card.appendChild(button)
             }
         }
-
-
     }
+}
 
     //función para borrar artistas de la página
     function borrar() {
@@ -608,7 +656,7 @@ if (document.title === "Admin") {
     }
 
     //función para modificar el form visible en función al tipo de artista que se desea ingresar
-    function cambiarForm() {
+    function cambiarForm(event) {
 
         let especifico = document.getElementById("especifico")
         let form
@@ -620,8 +668,8 @@ if (document.title === "Admin") {
 
             if (artes[i] === event.currentTarget) {
                 valorClase = artes[i].value
-                num =i
-            }else{
+                num = i
+            } else {
                 artes[i].removeAttribute("class")
                 artes[i].removeAttribute("checked")
             }
@@ -638,14 +686,14 @@ if (document.title === "Admin") {
         //Una vez determinado el tipo muestro sus respectivas forms
         form = document.getElementsByName(valorClase)
         formsAnteriores = form
-        
+
         for (i = 0; i < form.length; i++) {
             form[i].style.display = "block"
             if (form[i].hasAttribute("type")) {
                 form[i].className = "necesario"
                 form[i].style.borderColor = "rgba(90, 84, 255, .85)"
             }
-            if(form[i].hasAttribute("role")){
+            if (form[i].hasAttribute("role")) {
                 form[i].style.display = "none"
             }
         }
@@ -700,7 +748,7 @@ if (document.title === "Admin") {
                     allForms[i].style.borderColor = "red"
                     document.getElementById(allForms[i].attributes[0].value).className = "alerta"
                     document.getElementById(allForms[i].attributes[0].value).style.display = "inline-block"
-                    
+
                 }
             }
         } else {
@@ -754,7 +802,7 @@ if (document.title === "Admin") {
                     }
                 }
             }
-            
+
             //hecho esto convierto el array en string para guardarlo en el storage
             serializado = JSON.stringify(artistas[num])
             localStorage.setItem(valorClase, serializado)
@@ -785,7 +833,7 @@ if (document.title === "Área del Artista") {
 
     document.getElementById("prueba").innerText = objeto.nombreCompleto
     document.getElementById("foto").src = objeto.img
-    document.getElementById("foto").alt = objeto.nombreMostrar
+    document.getElementById("foto").alt = objeto.nombreMuestra
     document.getElementById("rubro").innerText = objeto.rubro
     document.getElementById("edad").innerText = "Edad: " + objeto.edad
     document.getElementById("genero").innerText = "Genero: " + objeto.genero
