@@ -504,7 +504,7 @@ if (document.title === "Foro de Artistas") {
                 icon.className = "fa-solid fa-angle-down ms-auto";
                 icon.setAttribute("aria-hidden", "true");
                 p.className = 'card-text mt-3 text-light collapse ps-4 pt-3';
-                a.className = 'btn btn-info btn-sm mt-3'; // botón debajo del texto ampliado
+                a.className = 'btn btn-info btn-sm mt-3 mb-4 mx-auto d-block px-3 py-1 text-center fs-6'; // botón debajo del texto ampliado
 
 
                 li.setAttribute("aria-expanded", "false")
@@ -514,7 +514,7 @@ if (document.title === "Foro de Artistas") {
                 icon.className = "fa-solid fa-angle-down"
                 icon.setAttribute("aria-hidden", "true")
                 p.innerText = JSON.parse(campo[i]).presentarse
-                a.innerHTML = "<br>Más información sobre el artista"
+                a.innerHTML = "Más información sobre el artista"
                 const index = findIndex(posiblesCopia, campo[i])
                 //Al ingresar a la página personal cambio la url y meto en un storage los datos que deberá mostrar la página
                 a.addEventListener("click", () => {

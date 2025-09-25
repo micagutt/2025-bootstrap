@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-Es">
 
 <head>
   <meta charset="UTF-8" />
@@ -20,26 +20,30 @@
           <fieldset class="border border-light rounded-3 p-4 bg-transparent text-light">
             <legend class="float-none w-auto px-2">Información general de artista</legend>
 
-            <div class="mb-3"> 
-              <label for="nombreMuestra" class="form-label">Nombre</label> 
-              <input aria-describedby="falta-nombre" autocomplete="off" class="form-control form-control-sm" id="nombreMuestra" type="text" required />
+            <div class="mb-3">
+              <label for="nombreMuestra" class="form-label">Nombre</label>
+              <input aria-describedby="falta-nombre" autocomplete="off" class="form-control form-control-sm"
+                id="nombreMuestra" type="text" required />
               <p class="form-text text-danger" id="falta-nombre" role="alert"> Debe ingresar un nombre válido</p>
             </div>
 
-            <div class="mb-3"> 
-              <label for="nombreComp" class="form-label">Nombre completo</label> 
-              <input aria-describedby="falta-nombre-completo" autocomplete="off" class="form-control form-control-sm" id="nombreComp" type="text" required />
-              <p class="form-text text-danger" id="falta-nombre-completo" role="alert"> Debe ingresar un nombre válido</p>
+            <div class="mb-3">
+              <label for="nombreComp" class="form-label">Nombre completo</label>
+              <input aria-describedby="falta-nombre-completo" autocomplete="off" class="form-control form-control-sm"
+                id="nombreComp" type="text" required />
+              <p class="form-text text-danger" id="falta-nombre-completo" role="alert"> Debe ingresar un nombre válido
+              </p>
             </div>
 
-            <div class="mb-3"> 
-              <label for="edad" class="form-label">Edad</label> 
-              <input aria-describedby="falta-edad" autocomplete="off" class="form-control form-control-sm" id="edad" type="number" required />
+            <div class="mb-3">
+              <label for="edad" class="form-label">Edad</label>
+              <input aria-describedby="falta-edad" autocomplete="off" class="form-control form-control-sm" id="edad"
+                type="number" required />
               <p class="form-text text-danger" id="falta-edad" role="alert"> Debe ingresar una edad válida</p>
             </div>
 
-            <div class="mb-3"> 
-              <label for="genero" class="form-label">Genero</label> 
+            <div class="mb-3">
+              <label for="genero" class="form-label">Genero</label>
               <select aria-describedby="falta-genero" class="form-select form-select-sm" name="" id="genero" required>
                 <option hidden value=null>Seleccionar Género</option>
                 <option value="hombre">Hombre</option>
@@ -49,132 +53,147 @@
               <p class="form-text text-danger" id="falta-genero" role="alert"> Debe ingresar un género</p>
             </div>
 
-            <div class="mb-3"> 
-              <label for="imagen" class="form-label">Ingrese una foto de perfil para el artista</label> 
-              <input aria-describedby="falta-foto" class="form-control form-control-sm" id="imagen" type="file" class="input-imagen" required />
+            <div class="mb-3">
+              <label for="imagen" class="form-label">Ingrese una foto de perfil para el artista</label>
+              <input aria-describedby="falta-foto" class="form-control form-control-sm" id="imagen" type="file"
+                class="input-imagen" required />
               <p class="form-text text-danger" id="falta-foto" role="alert"> Debe ingresar una foto de perfil</p>
             </div>
 
-            <div class="mb-3"> 
-              <label for="biografia" class="form-label">Biografia</label> 
-              <textarea aria-describedby="falta-bio" autocomplete="off" class="form-control form-control-sm" id="biografia" required></textarea>
+            <div class="mb-3">
+              <label for="biografia" class="form-label">Biografia</label>
+              <textarea aria-describedby="falta-bio" autocomplete="off" class="form-control form-control-sm"
+                id="biografia" required></textarea>
               <p class="form-text text-danger" id="falta-bio" role="alert"> Ingrese una biografía</p>
             </div>
 
             <ul class="mb-3 d-flex flex-wrap gap-3">
-              
-              <li class="form-check"> 
-                <input class="form-check-input" type="radio" name="arte" id="fotografo" value="Fotógrafo" /> 
-                <label class="form-check-label" for="fotografo">Fotógrafo</label> 
+
+              <li class="form-check">
+                <input class="form-check-input" type="radio" name="arte" id="fotografo" value="Fotógrafo" />
+                <label class="form-check-label" for="fotografo">Fotógrafo</label>
               </li>
 
-              <li class="form-check"> 
-                <input class="form-check-input" type="radio" name="arte" id="pintor" value="Pintor" /> 
-                <label class="form-check-label" for="pintor">Pintor</label> 
+              <li class="form-check">
+                <input class="form-check-input" type="radio" name="arte" id="pintor" value="Pintor" />
+                <label class="form-check-label" for="pintor">Pintor</label>
               </li>
 
-              <li class="form-check"> 
-                <input class="form-check-input" type="radio" name="arte" id="musico" value="Músico" /> 
-                <label class="form-check-label" for="musico">Músico</label> 
+              <li class="form-check">
+                <input class="form-check-input" type="radio" name="arte" id="musico" value="Músico" />
+                <label class="form-check-label" for="musico">Músico</label>
               </li>
 
-              <li class="form-check"> 
-                <input class="form-check-input" type="radio" name="arte" id="escultor" value="Escultor" /> 
-                <label class="form-check-label" for="escultor">Escultor</label> 
+              <li class="form-check">
+                <input class="form-check-input" type="radio" name="arte" id="escultor" value="Escultor" />
+                <label class="form-check-label" for="escultor">Escultor</label>
               </li>
 
-              <li class="form-check"> 
-                <input class="form-check-input" type="radio" name="arte" id="escritor" value="Escritor" /> 
-                <label class="form-check-label" for="escritor">Escritor</label> 
+              <li class="form-check">
+                <input class="form-check-input" type="radio" name="arte" id="escritor" value="Escritor" />
+                <label class="form-check-label" for="escritor">Escritor</label>
               </li>
 
-              <li class="form-check"> 
-                <input class="form-check-input" type="radio" name="arte" id="actor" value="Actor" /> 
-                <label class="form-check-label" for="actor">Actor</label> 
+              <li class="form-check">
+                <input class="form-check-input" type="radio" name="arte" id="actor" value="Actor" />
+                <label class="form-check-label" for="actor">Actor</label>
               </li>
 
-              <li class="form-check"> 
-                <input class="form-check-input" type="radio" name="arte" id="director" value="Director" /> 
-                <label class="form-check-label" for="director">Director</label> 
+              <li class="form-check">
+                <input class="form-check-input" type="radio" name="arte" id="director" value="Director" />
+                <label class="form-check-label" for="director">Director</label>
               </li>
             </ul>
             <p class="form-text text-danger" role="alert"> Seleccione un tipo de artista</p>
           </fieldset>
 
-          <fieldset class="border border-light rounded-3 p-4 mt-4 bg-transparent text-light" id="especifico" style="display:none;">
+          <fieldset class="border border-light rounded-3 p-4 mt-4 bg-transparent text-light" id="especifico"
+            style="display:none;">
             <legend class="float-none w-auto px-2">Información específica de artista</legend>
-            <div class="mb-3"> 
-              <label for="camara" class="form-label">Ingrese la cámara del fotógrafo</label> 
-              <input aria-describedby="falta-camara" autocomplete="off" type="text" class="form-control form-control-sm" id="camara" name="Fotógrafo" placeholder="Ej. Canon" />
+            <div class="mb-3">
+              <label for="camara" class="form-label">Ingrese la cámara del fotógrafo</label>
+              <input aria-describedby="falta-camara" autocomplete="off" type="text" class="form-control form-control-sm"
+                id="camara" name="Fotógrafo" placeholder="Ej. Canon" />
               <p class="form-text text-danger" id="falta-camara" role="alert"> Ingrese una cámara</p>
             </div>
 
-            <div class="mb-3"> 
-              <label for="pinturas" class="form-label" >Ingrese qué pinturas usa el pintor</label> 
-              <input aria-describedby="falta-pinturas" autocomplete="off" type="text" class="form-control form-control-sm" id="pinturas" name="Pintor" placeholder="Ej. Acuarela" />
-              <p class="form-text text-danger"  id="falta-pinturas" role="alert"> Ingrese un tipo de pintura</p>
+            <div class="mb-3">
+              <label for="pinturas" class="form-label">Ingrese qué pinturas usa el pintor</label>
+              <input aria-describedby="falta-pinturas" autocomplete="off" type="text"
+                class="form-control form-control-sm" id="pinturas" name="Pintor" placeholder="Ej. Acuarela" />
+              <p class="form-text text-danger" id="falta-pinturas" role="alert"> Ingrese un tipo de pintura</p>
             </div>
 
-            <div class="mb-3"> 
-              <label for="pinta" class="form-label" >Ingrese qué suele pinat el pintor</label> 
-              <input aria-describedby="falta-superficie" autocomplete="off" type="text" class="form-control form-control-sm" id="pinta" placeholder="Ej. murales" name="Pintor" />
+            <div class="mb-3">
+              <label for="pinta" class="form-label">Ingrese qué suele pinat el pintor</label>
+              <input aria-describedby="falta-superficie" autocomplete="off" type="text"
+                class="form-control form-control-sm" id="pinta" placeholder="Ej. murales" name="Pintor" />
               <p class="form-text text-danger" id="falta-superficie" role="alert"> Ingrese una superficie</p>
             </div>
 
-            <div class="mb-3"> 
-              <label for="instrumentos" class="form-label">Ingrese los instrumentos que el músico toca</label> 
-              <input aria-describedby="falta-instrumento" autocomplete="off" type="text" class="form-control form-control-sm" id="instrumentos" name="Músico" placeholder="Ej. Guitarra" />
+            <div class="mb-3">
+              <label for="instrumentos" class="form-label">Ingrese los instrumentos que el músico toca</label>
+              <input aria-describedby="falta-instrumento" autocomplete="off" type="text"
+                class="form-control form-control-sm" id="instrumentos" name="Músico" placeholder="Ej. Guitarra" />
               <p class="form-text text-danger" id="falta-instrumento" role="alert"> Ingrese un instrumento</p>
             </div>
 
-            <div class="mb-3"> 
+            <div class="mb-3">
               <label for="materiales" class="form-label">Ingrese los materiales con los que el escultor trabaja</label>
-              <input aria-describedby="falta-material" autocomplete="off" type="text" placeholder="Ej. marmol" class="form-control form-control-sm" id="materiales" name="Escultor" />
+              <input aria-describedby="falta-material" autocomplete="off" type="text" placeholder="Ej. marmol"
+                class="form-control form-control-sm" id="materiales" name="Escultor" />
               <p class="form-text text-danger" id="falta-material" role="alert"> Ingrese un material</p>
             </div>
 
-            <div class="mb-3"> 
-              <label for="escribe" class="form-label">Ingrese que escribe el escritor</label> 
-              <input aria-describedby="falta-tipo-texto" autocomplete="off" type="text" placeholder="ej. novelas" class="form-control form-control-sm" id="escribe" name="Escritor" />
+            <div class="mb-3">
+              <label for="escribe" class="form-label">Ingrese que escribe el escritor</label>
+              <input aria-describedby="falta-tipo-texto" autocomplete="off" type="text" placeholder="ej. novelas"
+                class="form-control form-control-sm" id="escribe" name="Escritor" />
               <p class="form-text text-danger" id="falta-tipo-texto" role="alert"> Ingrese un tipo de texto </p>
             </div>
 
-            <div class="mb-3"> 
-              <label for="generoEsc" class="form-label">Ingrese el género que escribe el escritor</label> 
-              <input aria-describedby="falta-genero-esc" autocomplete="off" type="text" placeholder="ej. misterio" class="form-control form-control-sm" id="generoEsc" name="Escritor" />
+            <div class="mb-3">
+              <label for="generoEsc" class="form-label">Ingrese el género que escribe el escritor</label>
+              <input aria-describedby="falta-genero-esc" autocomplete="off" type="text" placeholder="ej. misterio"
+                class="form-control form-control-sm" id="generoEsc" name="Escritor" />
               <p class="form-text text-danger" id="falta-genero-esc" role="alert"> Ingrese un género de escritura</p>
             </div>
 
-            <div class="mb-3"> 
-              <label for="obrasAct" class="form-label">Ingrese en qué obras actuó el actor</label> 
-              <input aria-describedby="falta-obra-act" autocomplete="off" type="text" class="form-control form-control-sm" id="obrasAct" placeholder="Ej. Titanic" name="Actor" />
+            <div class="mb-3">
+              <label for="obrasAct" class="form-label">Ingrese en qué obras actuó el actor</label>
+              <input aria-describedby="falta-obra-act" autocomplete="off" type="text"
+                class="form-control form-control-sm" id="obrasAct" placeholder="Ej. Titanic" name="Actor" />
               <p class="form-text text-danger" id="falta-obra-act" role="alert"> Ingrese al menos una obra</p>
             </div>
 
-            <div class="mb-3"> 
-              <label for="personajes" class="form-label">Ingrese de qué personajes hizo respectivamente</label> 
-              <input aria-describedby="falta-personaje" autocomplete="off" type="text" placeholder="Ej. Rose" class="form-control form-control-sm" id="personajes" name="Actor" />
+            <div class="mb-3">
+              <label for="personajes" class="form-label">Ingrese de qué personajes hizo respectivamente</label>
+              <input aria-describedby="falta-personaje" autocomplete="off" type="text" placeholder="Ej. Rose"
+                class="form-control form-control-sm" id="personajes" name="Actor" />
               <p class="form-text text-danger" id="falta-personaje" role="alert"> Ingrese un personaje</p>
             </div>
 
-            <div class="mb-3"> 
-              <label for="generoAct" class="form-label">Ingrese en qué generos suele actuar el actor</label> 
-              <input aria-describedby="falta-genero-act" autocomplete="off" type="text" placeholder="Ej. romance" class="form-control form-control-sm" id="generoAct" name="Actor" />
+            <div class="mb-3">
+              <label for="generoAct" class="form-label">Ingrese en qué generos suele actuar el actor</label>
+              <input aria-describedby="falta-genero-act" autocomplete="off" type="text" placeholder="Ej. romance"
+                class="form-control form-control-sm" id="generoAct" name="Actor" />
               <p class="form-text text-danger" id="falta-genero-act" role="alert"> Ingrese un género actoral</p>
             </div>
 
-            <div class="mb-3"> 
-              <label for="obrasDir" class="form-label">Ingrese qué obras dirigió el escritor</label> 
-              <input aria-describedby="falta-obra-dir" autocomplete="off" type="text" class="form-control form-control-sm" id="obrasDir" placeholder="Ej. Duro de Matar" name="Director" />
+            <div class="mb-3">
+              <label for="obrasDir" class="form-label">Ingrese qué obras dirigió el escritor</label>
+              <input aria-describedby="falta-obra-dir" autocomplete="off" type="text"
+                class="form-control form-control-sm" id="obrasDir" placeholder="Ej. Duro de Matar" name="Director" />
               <p class="form-text text-danger" id="falta-obra-dir" role="alert"> Ingrese al menos una obra </p>
             </div>
 
-            <div class="mb-3"> 
-              <label for="generoDir" class="form-label">Ingrese qué generos suele dirigir el escitor</label> 
-              <input aria-describedby="falta-genero-dir" autocomplete="off" type="text" placeholder="ej. acción" class="form-control form-control-sm" id="generoDir" name="Director" />
+            <div class="mb-3">
+              <label for="generoDir" class="form-label">Ingrese qué generos suele dirigir el escitor</label>
+              <input aria-describedby="falta-genero-dir" autocomplete="off" type="text" placeholder="ej. acción"
+                class="form-control form-control-sm" id="generoDir" name="Director" />
               <p class="form-text text-danger" id="falta-genero-dir" role="alert"> Ingrese al menos un género </p>
             </div>
-          </fieldset> 
+          </fieldset>
 
           <input class="btn btn-success btn-sm w-100" id="enviar" type="button" value="Enviar" />
         </form>
@@ -187,8 +206,47 @@
     </section>
 
   </main>
-  <footer></footer>
+  <footer class="border border-light rounded-3 text-white text-center text-lg-start mt-5 shadow-lg"
+    style="background-color: #001a3a;">
+    <div class="container p-4">
+      <div class="row">
+        <!-- sobre la página -->
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Página de artistas oficial</h5>
+          <p>
+            Un sitio hecho con mucho esfuerzo y estilo usando Bootstrap.
+          </p>
+        </div>
+
+        <!-- enlaces -->
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Enlaces</h5>
+          <ul class="list-unstyled mb-0">
+            <li><a href="#" class="text-white text-decoration-none">Inicio</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Sobre mí</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- redes -->
+        <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Redes</h5>
+          <a href="#" class="btn btn-outline-light btn-sm me-2 text-end">Instagram</a>
+          <a href="#" class="btn btn-outline-light btn-sm me-2 text-end">Facebook</a>
+          <a href="#" class="btn btn-outline-light btn-sm text-end">Twitter</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Barra inferior -->
+    <div class="text-center text-dark bg-light">
+      © 2025 Página de artistas oficial - Todos los derechos reservados
+    </div>
+  </footer>
 </body>
 <script src="assets/js/scripts.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/c109fc5a43.js" crossorigin="anonymous"></script>
+
 </html>
