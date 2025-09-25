@@ -498,12 +498,12 @@ if (document.title === "Foro de Artistas") {
                 // El resto del contenido
                 button.className = 'btn w-100 text-start d-flex align-items-center bg-transparent border-0 p-0';
                 figure.className = 'd-flex align-items-center w-100 m-0';
-                figcaption.className = 'd-flex flex-column text-light';
+                figcaption.className = 'd-flex flex-column text-light ps-3 pt-3';
                 h3.className = 'mb-1 text-light fs-5';
                 h4.className = 'mb-0 text-light fs-6';
                 icon.className = "fa-solid fa-angle-down ms-auto";
                 icon.setAttribute("aria-hidden", "true");
-                p.className = 'card-text mt-3 text-light collapse';
+                p.className = 'card-text mt-3 text-light collapse ps-4 pt-3';
                 a.className = 'btn btn-info btn-sm mt-3'; // botón debajo del texto ampliado
 
 
